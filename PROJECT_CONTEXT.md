@@ -8,6 +8,7 @@ This file carries forward decisions from the shared planning conversation. Treat
 - Keep the atmosphere magical, elegant, warm, and personal using a few softly glowing stars and drifting particles. Avoid bunting, polka dots, excess balloons, and clutter.
 - The welcome screen uses an interactive envelope and wax seal that opens into the existing cake flow.
 - Restyle memory cards as accessible, touch-friendly Polaroid flip cards. Use the existing card content as the reverse side; do not invent messages or add another screen.
+- After the selected gift is opened, show the closing note: “Send me a screenshot of your gift!”
 
 ## Experience flow
 

@@ -6,6 +6,7 @@ import { createGameManager } from "./games/game-manager.js";
 import { renderPreview, runShuffle, renderReveal } from "./cards/cards.js";
 import { burst } from "./confetti.js";
 import { startFireworks } from "./cake/fireworks.js";
+import { CARDS } from "./cards/card-data.js";
 
 const $ = (id) => document.getElementById(id);
 const cake = createCake($("cake-mount"), {
@@ -92,7 +93,11 @@ $("mute-btn").addEventListener("click", (event) => {
 });
 $("envelope-btn").addEventListener("click", openEnvelope);
 
-// Local design preview: append ?preview=cards to inspect cards without completing the puzzle.
-if (new URLSearchParams(window.location.search).get("preview") === "cards") {
+// Local design previews: inspect the cards or final gift without completing the puzzle.
+const previewParams = new URLSearchParams(window.location.search);
+if (previewParams.get("preview") === "cards") {
   showPreview();
+} else if (previewParams.get("preview") === "reveal") {
+  const previewCard = CARDS.find(card => card.id === previewParams.get("card")) || CARDS[0];
+  showReveal(previewCard);
 }

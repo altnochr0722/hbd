@@ -115,11 +115,11 @@ export function renderReveal(root, card, onReplay) {
       ${card.reveal.paragraphs.map(text => `<p>${text}</p>`).join('')}
       <img class="polaroid" src="${PUZZLE_CONFIG.imagePath}" alt="" onerror="this.remove()">
       ${card.decor.map((symbol, i) => `<span class="deco" aria-hidden="true" style="left:${spots[i][0]};top:${spots[i][1]};animation-delay:${i * 0.6}s">${symbol}</span>`).join('')}
-    </article></div><button class="btn" hidden>Play again ↻</button>`;
-  const gift = root.querySelector('.gift'), cardEl = root.querySelector('.reveal-card'), replay = root.querySelector('.btn');
+    </article></div><p class="screenshot-note" hidden>Send me a screenshot of your gift! ✨</p><button class="btn" hidden>Play again ↻</button>`;
+  const gift = root.querySelector('.gift'), cardEl = root.querySelector('.reveal-card'), replay = root.querySelector('.btn'), screenshotNote = root.querySelector('.screenshot-note');
   gift.addEventListener('click', () => {
     gift.classList.add('open'); play('chime'); burst(root.querySelector('.reveal-stage'), 40);
-    setTimeout(() => { gift.hidden = true; cardEl.hidden = false; replay.hidden = false; cardEl.querySelector('h2').focus(); }, 700);
+    setTimeout(() => { gift.hidden = true; cardEl.hidden = false; screenshotNote.hidden = false; replay.hidden = false; cardEl.querySelector('h2').focus(); }, 700);
   }, { once: true });
   replay.addEventListener('click', onReplay);
   setTimeout(() => gift.focus(), 700);

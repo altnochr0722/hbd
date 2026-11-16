@@ -145,6 +145,14 @@
 }
 .reveal-card p { max-width: none; }
 .reveal-card .big { font-size: 3rem; }
+.screenshot-note {
+  max-width: none;
+  margin-top: 0.15rem;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
+  letter-spacing: 0.02em;
+}
 .deco { position: absolute; color: var(--gold); font-size: 1.6rem; animation: bob 3.5s ease-in-out infinite; }
 @keyframes reveal-in { from { transform: rotateY(35deg) translateY(12px) scale(0.94); opacity: 0; } }
 .gift {
