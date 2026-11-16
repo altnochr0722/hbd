@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Төрсөн өдрийн адал явдал</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/cake.css" />
+    <link rel="stylesheet" href="css/puzzle.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+  </head>
+  <body>
+    <div class="sky" id="sky" aria-hidden="true"></div>
+    <button
+      class="mute"
+      id="mute-btn"
+      aria-label="Sound on/off"
+      aria-pressed="false"
+    >
+      🔊
+    </button>
+    <main id="app">
+      <section class="screen active" data-screen="welcome">
+        <div class="welcome-copy">
+          <p class="eyebrow">ӨНӨӨДӨР ЧИНИЙ ӨДӨР</p>
+          <h1 tabindex="-1" class="title">Чамд зориулсан бяцхан сюрприз</h1>
+          <p>Жижигхэн захидлыг нээгээд, төрсөн өдрийн хүслээ бодоорой.</p>
+        </div>
+        <button class="envelope" id="envelope-btn" type="button" aria-label="Төрсөн өдрийн захидлыг нээх">
+          <span class="envelope-letter" aria-hidden="true"><span>Төрсөн өдрийн мэнд хүргэе</span><span class="letter-star">✦</span></span>
+          <span class="envelope-back" aria-hidden="true"></span>
+          <span class="envelope-front" aria-hidden="true"></span>
+          <span class="envelope-flap" aria-hidden="true"></span>
+          <span class="wax-seal" aria-hidden="true">✦</span>
+        </button>
+        <p class="envelope-hint" aria-live="polite">Лаагаа асааж, хүслээ бодоорой</p>
+      </section>
+      <section class="screen" data-screen="cake" id="cake-mount"></section>
+      <section class="screen" data-screen="game" id="game-root"></section>
+      <section class="screen" data-screen="preview" id="preview-root"></section>
+      <section class="screen" data-screen="shuffle" id="shuffle-root"></section>
+      <section class="screen" data-screen="reveal" id="reveal-root"></section>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+[data-screen="game"] {
+  gap: 0.5rem;
+  padding: 0.6rem;
+}
+[data-screen="game"] h2 {
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+}
+.puzzle-area {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: min(100%, 1150px);
+}
+.puzzle-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.board {
+  fill: rgba(225, 217, 199, 0.12);
+  stroke: var(--gold);
+  stroke-width: 5;
+  stroke-dasharray: 18 12;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.3));
+  transition: opacity 0.6s;
+}
+.piece {
+  cursor: grab;
+}
+.piece .edge {
+  fill: none;
+  stroke: rgba(245, 239, 223, 0.55);
+  stroke-width: 2;
+  pointer-events: none;
+}
+.piece.dragging {
+  cursor: grabbing;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.5));
+}
+.piece.locked {
+  pointer-events: none;
+  cursor: default;
+}
+.piece.locked .edge {
+  stroke: rgba(245, 239, 223, 0.18);
+}
+.complete-img {
+  opacity: 0;
+  transition: opacity 0.9s;
+  pointer-events: none;
+}
+.puzzle-svg.done .complete-img {
+  opacity: 1;
+}
+.puzzle-svg.done .board {
+  opacity: 0;
+}
+.puzzle-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-weight: 800;
+  min-height: 1.6rem;
+}
+.counter {
+  padding: 0.15rem 0.8rem;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: rgba(215, 185, 120, 0.1);
+}
+.puzzle-msg {
+  margin: auto;
+  line-height: 1.7;
+}
+.puzzle-msg code {
+  color: var(--gold);
+}
+@media (max-height: 520px) {
+  .puzzle-intro {
+    display: none;
+  }
+}
